@@ -13,8 +13,8 @@
 
 #ifdef __cplusplus
 
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc.hpp>
+#include <opencv2/core.hpp>
 using namespace cv;
 
 #include <list>

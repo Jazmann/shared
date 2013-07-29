@@ -10,15 +10,17 @@
 
 #import <Accelerate/Accelerate.h>
 
-#include "opencv2/core/core.hpp"
+#include "opencv2/core.hpp"
 
 
 
 #ifdef __cplusplus
 
-#include "opencv2/features2d/features2d.hpp"
+#include "opencv2/features2d.hpp"
 #include "opencv2/nonfree/features2d.hpp"
-#include "opencv2/calib3d/calib3d.hpp"
+#include "opencv2/calib3d.hpp"
+#include "opencv2/calib3d/calib3d_c.h"
+
 using namespace cv;
 
 #include <list>
