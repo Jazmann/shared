@@ -12,7 +12,6 @@
 @implementation UIImageCVMatConverter
 
 
-
 + (UIImage *)UIImageFromCVMat:(cv::Mat)cvMat withUIImage:(UIImage*)image;
 {
 	CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
@@ -87,7 +86,19 @@
     CGFloat cols = image.size.width;
     CGFloat rows = image.size.height;
     
+    printf("cols : %f \n",cols);
+    printf("rows : %f \n",rows);
+    
     cv::Mat cvMat(rows, cols, CV_8UC4); // 8 bits per component, 4 channels
+    
+    printf("cvMatFromUIImage: cols : %i \n",cvMat.cols);
+    printf("cvMatFromUIImage: rows : %i \n",cvMat.rows);
+    printf("cvMatFromUIImage: cvMat.size(0) : %i \n",cvMat.size[0]);
+    printf("cvMatFromUIImage: cvMat.size(1) : %i \n",cvMat.size[1]);
+    printf("cvMatFromUIImage: cvMat.step(0) : %lu \n",cvMat.step[0]);
+    printf("cvMatFromUIImage: cvMat.elemSize() : %lu \n",cvMat.elemSize());
+    printf("cvMatFromUIImage: cvMat.elemSize1() : %lu \n",cvMat.elemSize1());
+    printf("cvMatFromUIImage: cvMat.total() : %lu \n",cvMat.total());
     
     CGContextRef contextRef = CGBitmapContextCreate(cvMat.data,                 // Pointer to  data
                                                     cols,                       // Width of bitmap
